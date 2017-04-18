@@ -1,0 +1,104 @@
+﻿<Page
+    x:Class="KocaeliUlasim.View.Duyurular"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KocaeliUlasim.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid>
+
+        <Grid.Background>
+            <SolidColorBrush Color="#ffffff"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#29c770">
+
+            <TextBlock Text="Duyurular" FontSize="18" FontFamily="Calibri" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="5,10,5,-10">
+
+            <Grid.Transitions>
+                <TransitionCollection>
+                    <NavigationThemeTransition>
+                        <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                            <EntranceNavigationTransitionInfo/>
+                        </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    </NavigationThemeTransition>
+                </TransitionCollection>
+            </Grid.Transitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="5">
+
+                <ProgressBar x:Name="progress" Foreground="#29c770" Background="Transparent" VerticalAlignment="Center"/>
+
+                <ListView
+                    x:Name="listTitles"
+                    SelectionChanged="listTitles_SelectionChanged"
+                    SelectionMode="Single"
+                    Background="Transparent">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid>
+                                  
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="10"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0">
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="0" Background="#169a4e">
+                                            <Image Source="ms-appx:///Assets/duyurular.png" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15" />
+                                        </Grid>
+
+                                        <Grid Grid.Column="1">
+                                            <Rectangle Fill="#29c770" Width="2000"/>
+                                            <TextBlock Margin="10,0,10,0" TextTrimming="None" TextWrapping="WrapWholeWords" FontSize="16" FontWeight="Light" Text="{Binding}" Foreground="White" />
+                                        </Grid>
+
+                                    </Grid>
+
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+          
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</Page>
+

@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="KocaeliUlasim.View.VapurSeferleri"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KocaeliUlasim.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#29c770">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <TextBlock Text="Vapur Seferleri" FontSize="16" FontFamily="Calibri" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Column="2">
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="20,20,20,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="auto"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <ComboBox x:Name="comboBox1" BorderBrush="#169a4e" BorderThickness="1" Background="#29c770" Header="Kalkış İskelesi" PlaceholderText="Seçiniz" SelectionChanged="comboBox1_SelectionChanged"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <ComboBox x:Name="comboBox2" BorderBrush="#169a4e" BorderThickness="1" Background="#29c770" Header="Varış İskelesi" PlaceholderText="Seçiniz" SelectionChanged="comboBox2_SelectionChanged"/>
+            </Grid>
+
+            <Grid Grid.Row="4">
+               
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,2.5,0" >
+                    <TextBlock Grid.Column="0" x:Name="startPlace" Text="" TextTrimming="CharacterEllipsis" FontSize="20" Foreground="#d9303e"/>
+                    <TextBlock Grid.Column="0" Text="Hareket Saati" TextTrimming="CharacterEllipsis" Foreground="#938b8a"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="2.5,0,0,0">
+                    <TextBlock Grid.Column="1" x:Name="finishPlace" Text="" TextTrimming="CharacterEllipsis" FontSize="20" Foreground="#a6242f"/>
+                    <TextBlock Grid.Column="1" Text="Varış Saati" TextTrimming="CharacterEllipsis" Foreground="#938b8a"/>
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+        
+    </Grid>
+
+</Page>
+
